@@ -89,13 +89,19 @@
     <serialspeed>115200</serialspeed>
     <primaryconsole>video</primaryconsole>
     <backup>
-      <git version="1.0.0" persisted_at="1781480524.56" description="Git Backup Settings">
-        <enabled>0</enabled>
-        <url/>
+      <git version="1.0.0" persisted_at="1781481448.45" description="Git Backup Settings">
+        <enabled>1</enabled>
+        <url>ssh://github.com/cyborgcatfish/homelab-config-opnsense.git</url>
         <branch>master</branch>
         <force_push>0</force_push>
-        <privkey/>
-        <user/>
+        <privkey>-----BEGIN OPENSSH PRIVATE KEY-----&#13;
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW&#13;
+QyNTUxOQAAACDpyvvGZZD6peFj4uHhU5gdL1L+6v3p/xER8YshZu0wNQAAAKCUhAf6lIQH&#13;
++gAAAAtzc2gtZWQyNTUxOQAAACDpyvvGZZD6peFj4uHhU5gdL1L+6v3p/xER8YshZu0wNQ&#13;
+AAAEBjDUZWml2gBJeXhQ0m8nybYaOYgYH9KORoUyhnOhY73+nK+8ZlkPql4WPi4eFTmB0v&#13;
+Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
+-----END OPENSSH PRIVATE KEY-----</privkey>
+        <user>git</user>
         <password/>
       </git>
     </backup>
@@ -447,9 +453,9 @@
     <ispool>0.opnsense.pool.ntp.org 1.opnsense.pool.ntp.org 2.opnsense.pool.ntp.org 3.opnsense.pool.ntp.org</ispool>
   </ntpd>
   <revision>
-    <username>(root)</username>
-    <description>/usr/local/opnsense/mvc/script/run_migrations.php made changes</description>
-    <time>1781480524.57</time>
+    <username>root@192.168.1.203</username>
+    <description>/diag_backup.php made changes</description>
+    <time>1781481448.45</time>
   </revision>
   <OPNsense>
     <wireguard>
