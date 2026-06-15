@@ -26,7 +26,7 @@
       <disabled>0</disabled>
       <scope>system</scope>
       <expires/>
-      <authorizedkeys>c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUk2K2hDc1RYV2hkQWJ6SjcvWlVNb1BONkx1UlhTZ091N1dCWVUvWUNQaG4gZWRnZS1yb290</authorizedkeys>
+      <authorizedkeys>c3NoLWVkMjU1MTkgQUFBQUMzTnphQzFsWkRJMU5URTVBQUFBSUk2K2hDc1RYV2hkQWJ6SjcvWlVNb1BONkx1UlhTZ091N1dCWVUvWUNQaG4gZWRnZS1yb290CnNzaC1lZDI1NTE5IEFBQUFDM056YUMxbFpESTFOVEU1QUFBQUlIR21haHNlUndydUU5aDc2VXhMalRyMk1oNm85UXQxa3J2NUZtbmFXSFVnIGhvbWVsYWI=</authorizedkeys>
       <otp_seed/>
       <shell/>
       <password>$2y$11$WBV2en.LDG/gTn1elLk7juV0pdSw4zYRhDRnubPyRQkJZzNk.pnie</password>
@@ -454,8 +454,8 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
   </ntpd>
   <revision>
     <username>root@192.168.1.203</username>
-    <description>/diag_backup.php made changes</description>
-    <time>1781481448.45</time>
+    <description>user "root" changed</description>
+    <time>1781482544.24</time>
   </revision>
   <OPNsense>
     <wireguard>
