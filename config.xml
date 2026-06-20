@@ -4,6 +4,11 @@
   <theme>opnsense</theme>
   <sysctl version="1.0.2" persisted_at="1781131135.33" description="System Tunables">
     <item/>
+    <item>
+      <tunable>net.link.ether.inet.max_age</tunable>
+      <value>120</value>
+      <descr>Workaround Comcast CGM4981COM bridge-mode slowdown (gateway ARP/memory-leak); see homelab-command-center 2026-06-15 session log</descr>
+    </item>
   </sysctl>
   <system>
     <optimization>normal</optimization>
@@ -89,7 +94,7 @@
     <serialspeed>115200</serialspeed>
     <primaryconsole>video</primaryconsole>
     <backup>
-      <git version="1.0.0" persisted_at="1781481448.45" description="Git Backup Settings">
+      <git version="1.0.0" persisted_at="1781989851.56" description="Git Backup Settings">
         <enabled>1</enabled>
         <url>ssh://github.com/cyborgcatfish/homelab-config-opnsense.git</url>
         <branch>master</branch>
@@ -195,36 +200,6 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
       <start_addr>192.168.1.150</start_addr>
       <end_addr>192.168.1.199</end_addr>
     </dhcp_ranges>
-    <hosts uuid="19c7c33c-0b13-4301-af19-76e1cdefbcb1">
-      <host>tailscale</host>
-      <domain/>
-      <local>0</local>
-      <ip>192.168.1.76</ip>
-      <cnames/>
-      <client_id/>
-      <hwaddr>bc:24:11:ed:18:b6</hwaddr>
-      <lease_time/>
-      <ignore>0</ignore>
-      <set_tag/>
-      <descr>tailscale VM (core)</descr>
-      <comments/>
-      <aliases/>
-    </hosts>
-    <hosts uuid="8965f42d-553b-4bf5-9a72-04339cc45c11">
-      <host>edge-1</host>
-      <domain/>
-      <local>0</local>
-      <ip>192.168.1.50</ip>
-      <cnames/>
-      <client_id/>
-      <hwaddr>bc:24:11:3e:5a:d4</hwaddr>
-      <lease_time/>
-      <ignore>0</ignore>
-      <set_tag/>
-      <descr>edge-1 VM (core)</descr>
-      <comments/>
-      <aliases/>
-    </hosts>
     <hosts uuid="efb1e7aa-8f10-462c-9020-df52d73dec9a">
       <host>media-stack</host>
       <domain/>
@@ -252,6 +227,156 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
       <ignore>0</ignore>
       <set_tag/>
       <descr>netservices VM (edge) - Omada controller, LOAD-BEARING, never move</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="e1a1e92b-e3e5-4c24-98d8-5ad3fb780b47">
+      <host>riverotters</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.60</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>4c:49:6c:f0:b7:84</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>riverotters (workstation) [2nd NIC TBD]</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="dfeb2f2f-4a1b-476b-9a4b-e3b78117e478">
+      <host>roadfrog</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.61</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>2c:98:11:3a:63:ef,00:24:27:89:21:c0,d6:3a:f5:49:89:18,c4:c6:e6:24:90:97</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>roadfrog (wifi + 2 docks + onboard)</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="efd902f3-abfa-4ae2-abf7-9d591e291ebb">
+      <host>yogafrog</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.62</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>c4:47:4e:bf:00:04</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>yogafrog (Lenovo Yoga)</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="a83e99bb-2a4a-44b9-bf04-9c15bed64603">
+      <host>virtwin</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.65</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>bc:24:11:30:39:2c</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>virtwin (workstation VM)</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="ec93a23b-2bd0-4db0-b7cb-f1e2d435951e">
+      <host>neon</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.66</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>bc:24:11:a1:0c:42</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>neon (workstation VM)</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="0b74d18d-8a09-4b61-ace8-14135f5bd0b7">
+      <host>basement-switch</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.6</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>6c:4c:bc:45:27:5f</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>basement-switch SG2210XMP-M2 (Omada)</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="438b0c45-e0fc-49bd-ac68-c7deb30796f2">
+      <host>basement-ap</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.7</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>a8:29:48:d1:47:20</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>basement-ap EAP773 (Omada)</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="8ef1da97-9f6c-4c66-8573-168a28dcd0c4">
+      <host>kitchen-ap</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.8</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>a8:29:48:d1:48:00</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>kitchen-ap EAP773 (Omada)</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="4e51e1d7-6bdf-4340-96c7-309edd330331">
+      <host>library-ap</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.9</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>a8:29:48:d7:31:c0</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>library-ap EAP773 (Omada)</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="979e51cc-f568-406f-8988-53dba055e997">
+      <host>printer</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.100</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>14:2d:27:a7:16:f3</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>printer NPI12E64C (HP)</descr>
       <comments/>
       <aliases/>
     </hosts>
@@ -454,8 +579,8 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
   </ntpd>
   <revision>
     <username>root@192.168.1.203</username>
-    <description>user "root" changed</description>
-    <time>1781482544.24</time>
+    <description>/diag_backup.php made changes</description>
+    <time>1781989851.56</time>
   </revision>
   <OPNsense>
     <wireguard>
@@ -1238,15 +1363,235 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
           <server>192.168.1.5</server>
           <description>edge Proxmox host (shadows public A record to .50; retire that record at edge-1 review)</description>
         </host>
-        <host uuid="6d5585ae-8506-4714-8747-563f239d88d2">
+        <host uuid="971bdd1e-89ea-4672-ba0b-9901a96b302f">
           <enabled>1</enabled>
-          <hostname>edge1</hostname>
+          <hostname>riverotters</hostname>
           <domain>petuniabowl.com</domain>
           <rr>A</rr>
           <mxprio/>
           <mx/>
-          <server>192.168.1.50</server>
-          <description>edge-1 VM (renamed from edge)</description>
+          <server>192.168.1.60</server>
+          <description>riverotters (workstation) [2nd NIC TBD]</description>
+        </host>
+        <host uuid="0e3eb199-d2b7-46cc-8222-3b457d3fcd5a">
+          <enabled>1</enabled>
+          <hostname>roadfrog</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.61</server>
+          <description>roadfrog (wifi + 2 docks + onboard)</description>
+        </host>
+        <host uuid="c47c23a5-4ec0-42c2-b9f1-d72e18df6a14">
+          <enabled>1</enabled>
+          <hostname>yogafrog</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.62</server>
+          <description>yogafrog (Lenovo Yoga)</description>
+        </host>
+        <host uuid="3a1d9707-9952-4439-933b-6680b8d833e3">
+          <enabled>1</enabled>
+          <hostname>virtwin</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.65</server>
+          <description>virtwin (workstation VM)</description>
+        </host>
+        <host uuid="5bd3795b-c599-417e-b176-5145026c4067">
+          <enabled>1</enabled>
+          <hostname>neon</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.66</server>
+          <description>neon (workstation VM)</description>
+        </host>
+        <host uuid="fd7bf6b2-52c6-42f8-a156-f161e1fbc735">
+          <enabled>1</enabled>
+          <hostname>basement-switch</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.6</server>
+          <description>basement-switch SG2210XMP-M2 (Omada)</description>
+        </host>
+        <host uuid="7f0c3029-e03a-46cc-bbf2-dc09bdb5ba1b">
+          <enabled>1</enabled>
+          <hostname>basement-ap</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.7</server>
+          <description>basement-ap EAP773 (Omada)</description>
+        </host>
+        <host uuid="11117bce-a299-4db2-ab11-46297efd5c5d">
+          <enabled>1</enabled>
+          <hostname>kitchen-ap</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.8</server>
+          <description>kitchen-ap EAP773 (Omada)</description>
+        </host>
+        <host uuid="18d05193-5614-473b-ba82-456a992baece">
+          <enabled>1</enabled>
+          <hostname>library-ap</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.9</server>
+          <description>library-ap EAP773 (Omada)</description>
+        </host>
+        <host uuid="e0cca3d1-782b-4084-be24-c1402dee5264">
+          <enabled>1</enabled>
+          <hostname>printer</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.100</server>
+          <description>printer NPI12E64C (HP)</description>
+        </host>
+        <host uuid="a8c65a57-920d-4d53-8509-f4a806be3ee8">
+          <enabled>1</enabled>
+          <hostname>sonarr</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="482369b1-b3aa-41aa-8642-24509b4ec776">
+          <enabled>1</enabled>
+          <hostname>radarr1080p</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="9be341a0-7584-4525-992e-77146f48fb9b">
+          <enabled>1</enabled>
+          <hostname>radarr4k</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="aa10de04-c2e1-4b4e-9ab9-686f0d30b4ea">
+          <enabled>1</enabled>
+          <hostname>prowlarr</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="7474ae77-7052-4f2a-acff-e097fa9c8096">
+          <enabled>1</enabled>
+          <hostname>tautulli</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="64da581c-791b-4911-a9c6-4c356053da1a">
+          <enabled>1</enabled>
+          <hostname>sab</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="f51d1416-e2da-4e59-bf72-43482eb7add7">
+          <enabled>1</enabled>
+          <hostname>qbit</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="c2b0389e-93ff-48c8-907e-2e0922a7d4a2">
+          <enabled>1</enabled>
+          <hostname>grafana</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="40a57d2f-8c8b-4fe0-a1be-756b54bee577">
+          <enabled>1</enabled>
+          <hostname>prometheus</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="463aa1bb-d600-4f15-b87d-75ec81237861">
+          <enabled>1</enabled>
+          <hostname>cadvisor</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="a0dd4584-401d-48fa-ae34-fd9c57713bb7">
+          <enabled>1</enabled>
+          <hostname>portainer</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="5b6d90dd-5667-488f-8ac9-3c60b8b8e35d">
+          <enabled>1</enabled>
+          <hostname>dozzle</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
+        </host>
+        <host uuid="bb81dc67-4939-4a03-9549-2467ace60a5e">
+          <enabled>1</enabled>
+          <hostname>media</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices)</description>
         </host>
       </hosts>
       <aliases/>
