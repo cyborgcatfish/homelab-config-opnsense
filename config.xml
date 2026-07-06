@@ -94,7 +94,7 @@
     <serialspeed>115200</serialspeed>
     <primaryconsole>video</primaryconsole>
     <backup>
-      <git version="1.0.0" persisted_at="1781989851.56" description="Git Backup Settings">
+      <git version="1.0.0" persisted_at="1783297620.12" description="Git Backup Settings">
         <enabled>1</enabled>
         <url>ssh://github.com/cyborgcatfish/homelab-config-opnsense.git</url>
         <branch>master</branch>
@@ -242,6 +242,36 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
       <ignore>0</ignore>
       <set_tag/>
       <descr>riverotters (workstation) [2nd NIC TBD]</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="3e6b82d4-e827-4e5f-ba68-fdc190747d25">
+      <host>milliways</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.21</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>bc:24:11:00:04:00</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>milliways (CT 400 orbiter, media stack) - MAC pinned pre-creation 2026-07-05</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="01317442-4f5c-40ca-bd25-5ab56cd1db19">
+      <host>eddie</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.22</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>bc:24:11:00:02:01</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>eddie (CT 201 core, AI frontend + MCP) - MAC pinned pre-creation 2026-07-05</descr>
       <comments/>
       <aliases/>
     </hosts>
@@ -580,7 +610,7 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
   <revision>
     <username>root@192.168.1.203</username>
     <description>/diag_backup.php made changes</description>
-    <time>1781989851.56</time>
+    <time>1783297620.12</time>
   </revision>
   <OPNsense>
     <wireguard>
@@ -1233,6 +1263,26 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
         </dot>
       </dots>
       <hosts>
+        <host uuid="1323ae24-6da5-11f1-8f84-bc24114af4a8">
+          <enabled>1</enabled>
+          <hostname>ai-core</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.20</server>
+          <description>ai-core LXC (RTX 4090 / Ollama) - SSH/direct by name</description>
+        </host>
+        <host uuid="60f4453d-6d9d-11f1-8f84-bc24114af4a8">
+          <enabled>1</enabled>
+          <hostname>ai</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.203</server>
+          <description>Caddy reverse proxy (netservices) - Open WebUI</description>
+        </host>
         <host uuid="251ed5bd-37d8-4591-9b09-5fb3403bdfe1">
           <enabled>1</enabled>
           <hostname>omada</hostname>
@@ -1372,6 +1422,26 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
           <mx/>
           <server>192.168.1.60</server>
           <description>riverotters (workstation) [2nd NIC TBD]</description>
+        </host>
+        <host uuid="e86cfe6b-301c-439c-9dc3-3aabb7275e04">
+          <enabled>1</enabled>
+          <hostname>milliways</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.21</server>
+          <description>milliways (CT 400 orbiter, media stack) - MAC pinned pre-creation 2026-07-05</description>
+        </host>
+        <host uuid="512e607b-50b1-405d-95f5-9b5a4735fd48">
+          <enabled>1</enabled>
+          <hostname>eddie</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.22</server>
+          <description>eddie (CT 201 core, AI frontend + MCP) - MAC pinned pre-creation 2026-07-05</description>
         </host>
         <host uuid="0e3eb199-d2b7-46cc-8222-3b457d3fcd5a">
           <enabled>1</enabled>
