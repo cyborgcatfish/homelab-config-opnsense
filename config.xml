@@ -85,7 +85,7 @@
     <firmware version="1.0.1" persisted_at="1781131135.01" description="Firmware settings">
       <mirror/>
       <flavour/>
-      <plugins>os-qemu-guest-agent</plugins>
+      <plugins>os-git-backup,os-qemu-guest-agent,os-tailscale</plugins>
       <type/>
       <subscription/>
       <reboot>0</reboot>
@@ -608,9 +608,9 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
     <ispool>0.opnsense.pool.ntp.org 1.opnsense.pool.ntp.org 2.opnsense.pool.ntp.org 3.opnsense.pool.ntp.org</ispool>
   </ntpd>
   <revision>
-    <username>root@192.168.1.203</username>
-    <description>/diag_backup.php made changes</description>
-    <time>1783297620.12</time>
+    <username>(root)</username>
+    <description>/usr/local/opnsense/scripts/firmware/register.php made changes</description>
+    <time>1783354531.09</time>
   </revision>
   <OPNsense>
     <wireguard>
