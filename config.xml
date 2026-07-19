@@ -94,7 +94,7 @@
     <serialspeed>115200</serialspeed>
     <primaryconsole>video</primaryconsole>
     <backup>
-      <git version="1.0.0" persisted_at="1783297620.12" description="Git Backup Settings">
+      <git version="1.0.0" persisted_at="1784488447.38" description="Git Backup Settings">
         <enabled>1</enabled>
         <url>ssh://github.com/cyborgcatfish/homelab-config-opnsense.git</url>
         <branch>master</branch>
@@ -200,21 +200,6 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
       <start_addr>192.168.1.150</start_addr>
       <end_addr>192.168.1.199</end_addr>
     </dhcp_ranges>
-    <hosts uuid="efb1e7aa-8f10-462c-9020-df52d73dec9a">
-      <host>media-stack</host>
-      <domain/>
-      <local>0</local>
-      <ip>192.168.1.135</ip>
-      <cnames/>
-      <client_id/>
-      <hwaddr>bc:24:11:47:8b:66</hwaddr>
-      <lease_time/>
-      <ignore>0</ignore>
-      <set_tag/>
-      <descr>media-stack VM (core)</descr>
-      <comments/>
-      <aliases/>
-    </hosts>
     <hosts uuid="84de8c1c-dbae-4747-9355-c5caaf65fc86">
       <host>netservices</host>
       <domain/>
@@ -272,6 +257,21 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
       <ignore>0</ignore>
       <set_tag/>
       <descr>eddie (CT 201 core, AI frontend + MCP) - MAC pinned pre-creation 2026-07-05</descr>
+      <comments/>
+      <aliases/>
+    </hosts>
+    <hosts uuid="1ec570af-b187-4887-967d-2e08b4f9a5ed">
+      <host>hex</host>
+      <domain/>
+      <local>0</local>
+      <ip>192.168.1.23</ip>
+      <cnames/>
+      <client_id/>
+      <hwaddr>bc:24:11:00:01:50</hwaddr>
+      <lease_time/>
+      <ignore>0</ignore>
+      <set_tag/>
+      <descr>hex (CT 150 desklab, Claude Code runner) - MAC pinned at creation 2026-07-19</descr>
       <comments/>
       <aliases/>
     </hosts>
@@ -608,9 +608,9 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
     <ispool>0.opnsense.pool.ntp.org 1.opnsense.pool.ntp.org 2.opnsense.pool.ntp.org 3.opnsense.pool.ntp.org</ispool>
   </ntpd>
   <revision>
-    <username>(root)</username>
-    <description>/usr/local/opnsense/scripts/firmware/register.php made changes</description>
-    <time>1783354531.09</time>
+    <username>root@192.168.1.203</username>
+    <description>/diag_backup.php made changes</description>
+    <time>1784488447.38</time>
   </revision>
   <OPNsense>
     <wireguard>
@@ -1265,13 +1265,13 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
       <hosts>
         <host uuid="1323ae24-6da5-11f1-8f84-bc24114af4a8">
           <enabled>1</enabled>
-          <hostname>ai-core</hostname>
+          <hostname>deepthought</hostname>
           <domain>petuniabowl.com</domain>
           <rr>A</rr>
           <mxprio/>
           <mx/>
           <server>192.168.1.20</server>
-          <description>ai-core LXC (RTX 4090 / Ollama) - SSH/direct by name</description>
+          <description>deepthought LXC (RTX 4090 / Ollama) - SSH/direct by name; renamed from ai-core 2026-07-19</description>
         </host>
         <host uuid="60f4453d-6d9d-11f1-8f84-bc24114af4a8">
           <enabled>1</enabled>
@@ -1296,16 +1296,6 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
         <host uuid="673b4987-137e-405d-b9d8-82bffe2b13a8">
           <enabled>1</enabled>
           <hostname>opnsense</hostname>
-          <domain>petuniabowl.com</domain>
-          <rr>A</rr>
-          <mxprio/>
-          <mx/>
-          <server>192.168.1.203</server>
-          <description>Caddy reverse proxy (netservices)</description>
-        </host>
-        <host uuid="2e7a5f2b-1310-4056-bd15-333ee598fb0c">
-          <enabled>1</enabled>
-          <hostname>lidarr</hostname>
           <domain>petuniabowl.com</domain>
           <rr>A</rr>
           <mxprio/>
@@ -1442,6 +1432,16 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
           <mx/>
           <server>192.168.1.22</server>
           <description>eddie (CT 201 core, AI frontend + MCP) - MAC pinned pre-creation 2026-07-05</description>
+        </host>
+        <host uuid="20b50a81-8c90-490a-b52a-54161c06c06d">
+          <enabled>1</enabled>
+          <hostname>hex</hostname>
+          <domain>petuniabowl.com</domain>
+          <rr>A</rr>
+          <mxprio/>
+          <mx/>
+          <server>192.168.1.23</server>
+          <description>hex (CT 150 desklab, Claude Code runner) - added 2026-07-19</description>
         </host>
         <host uuid="0e3eb199-d2b7-46cc-8222-3b457d3fcd5a">
           <enabled>1</enabled>
@@ -1596,56 +1596,6 @@ Uv7q/en/ERHxiyFm7TA1AAAAGW9wbnNlbnNlLWdpdGJhY2t1cC1kZXBsb3kBAgME&#13;
         <host uuid="f51d1416-e2da-4e59-bf72-43482eb7add7">
           <enabled>1</enabled>
           <hostname>qbit</hostname>
-          <domain>petuniabowl.com</domain>
-          <rr>A</rr>
-          <mxprio/>
-          <mx/>
-          <server>192.168.1.203</server>
-          <description>Caddy reverse proxy (netservices)</description>
-        </host>
-        <host uuid="c2b0389e-93ff-48c8-907e-2e0922a7d4a2">
-          <enabled>1</enabled>
-          <hostname>grafana</hostname>
-          <domain>petuniabowl.com</domain>
-          <rr>A</rr>
-          <mxprio/>
-          <mx/>
-          <server>192.168.1.203</server>
-          <description>Caddy reverse proxy (netservices)</description>
-        </host>
-        <host uuid="40a57d2f-8c8b-4fe0-a1be-756b54bee577">
-          <enabled>1</enabled>
-          <hostname>prometheus</hostname>
-          <domain>petuniabowl.com</domain>
-          <rr>A</rr>
-          <mxprio/>
-          <mx/>
-          <server>192.168.1.203</server>
-          <description>Caddy reverse proxy (netservices)</description>
-        </host>
-        <host uuid="463aa1bb-d600-4f15-b87d-75ec81237861">
-          <enabled>1</enabled>
-          <hostname>cadvisor</hostname>
-          <domain>petuniabowl.com</domain>
-          <rr>A</rr>
-          <mxprio/>
-          <mx/>
-          <server>192.168.1.203</server>
-          <description>Caddy reverse proxy (netservices)</description>
-        </host>
-        <host uuid="a0dd4584-401d-48fa-ae34-fd9c57713bb7">
-          <enabled>1</enabled>
-          <hostname>portainer</hostname>
-          <domain>petuniabowl.com</domain>
-          <rr>A</rr>
-          <mxprio/>
-          <mx/>
-          <server>192.168.1.203</server>
-          <description>Caddy reverse proxy (netservices)</description>
-        </host>
-        <host uuid="5b6d90dd-5667-488f-8ac9-3c60b8b8e35d">
-          <enabled>1</enabled>
-          <hostname>dozzle</hostname>
           <domain>petuniabowl.com</domain>
           <rr>A</rr>
           <mxprio/>
